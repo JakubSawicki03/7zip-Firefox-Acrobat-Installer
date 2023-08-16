@@ -1,5 +1,3 @@
-# Set-ExecutionPolicy RemoteSigned
-
 # 7Zip
 
 $apk1 = "https://www.7-zip.org/a/7z2301-x64.exe" 
