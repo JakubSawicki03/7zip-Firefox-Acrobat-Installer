@@ -11,4 +11,4 @@ Before you run the scipt you have to change policies in powershell. The default 
 3. Run the script in powershell -> PATH\installer.ps1
 4. Wait to the finish!
 
-# Be careful because this is my first PowerShell script 😂
+# Be careful because this is my first PowerShell script 😁
