@@ -57,6 +57,9 @@ $apk3_install = "c:\temp\adobe_installer.exe"
 
     powershell -Command "& {[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); [System.Windows.Forms.MessageBox]::Show('7-zip, Firefox and Adobe are now installed!','Installing')}";
 
+# Setting Default Policy
+
+Set-ExecutionPolicy Default
 
 
 
