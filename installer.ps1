@@ -5,10 +5,8 @@ $apk1 = "https://www.7-zip.org/a/7z2301-x64.exe"
 $apk1_install = "c:\temp\7zip_installer.exe" 
 
 # Mozilla Firefox
-
-$apk2 = "https://download.mozilla.org/?product=firefox-stub&os=win&lang=pl&attribution_code=c291cmNlPXd3dy5nb29nbGUuY29tJm1lZGl1bT1yZWZlcnJhbCZjYW1wYWlnbj0obm90IHNldCkmY29udGVudD0obm90IHNldCkmZXhwZXJpbWVudD0obm90IHNldCkmdmFyaWF0aW9uPShub3Qgc2V0KSZ1YT1jaHJvbWUmY2xpZW50X2lkPShub3Qgc2V0KSZzZXNzaW9uX2lkPShub3Qgc2V0KSZkbHNvdXJjZT1tb3pvcmc.&attribution_sig=8050a714514346fdc6eb8a04a5cf8bad6805f8964fec63b63a8e91e7962fa0f7"
-
-$apk2_install = "c:\temp\firefox_installer.exe"
+#$apk2 = "https://download.mozilla.org/?product=firefox-msi-latest-ssl" 
+#$apk2_install = "c:\temp\firefox_installer.msi"
 
 # Adobe Acrobat Reader 
 
@@ -27,7 +25,7 @@ $apk3_install = "c:\temp\adobe_installer.exe"
 
 # Downloading Firefox
 
-    Invoke-Webrequest -URI $apk2 -OutFile $apk2_install;
+#    Invoke-Webrequest -URI $apk2 -OutFile $apk2_install;
 
 # Installing 7zip
 
@@ -35,7 +33,7 @@ $apk3_install = "c:\temp\adobe_installer.exe"
 
 # Installing Firefox 
 
-    Start-Process -FilePath $apk2_install -ArgumentList  '/q', '/i';
+    msiexec.exe /i https://download.mozilla.org/?product=firefox-msi-latest-ssl /qn
 
 # Downloading Adobe
 
