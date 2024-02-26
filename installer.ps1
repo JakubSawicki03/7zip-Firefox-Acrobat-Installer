@@ -4,10 +4,6 @@ $apk1 = "https://www.7-zip.org/a/7z2301-x64.exe"
 
 $apk1_install = "c:\temp\7zip_installer.exe" 
 
-# Mozilla Firefox
-#$apk2 = "https://download.mozilla.org/?product=firefox-msi-latest-ssl" 
-#$apk2_install = "c:\temp\firefox_installer.msi"
-
 # Adobe Acrobat Reader 
 
 $apk3 = "https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2300820533/AcroRdrDCx642300820533_pl_PL.exe"
@@ -42,10 +38,6 @@ $apk3_install = "c:\temp\adobe_installer.exe"
 # Installing Adobe
 
     Start-Process -FilePath $apk3_install /sAlls -Wait;
-
-# taskKill the Firefox process
-
-    taskkill /IM firefox.exe  /F;
 
 # Removing "temp" directory
 
