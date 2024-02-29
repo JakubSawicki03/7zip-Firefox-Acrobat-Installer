@@ -1,43 +1,28 @@
-# 7Zip
-
-$apk1 = "https://www.7-zip.org/a/7z2301-x64.exe" 
-
-$apk1_install = "c:\temp\7zip_installer.exe" 
-
 # Adobe Acrobat Reader 
 
-$apk3 = "https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2300820533/AcroRdrDCx642300820533_pl_PL.exe"
+$adobe = "https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2300820533/AcroRdrDCx642300820533_pl_PL.exe"
 
-$apk3_install = "c:\temp\adobe_installer.exe"
+$adobe_install = "c:\temp\adobe_installer.exe"
+
+
 
 
 # Create "temp" directory
 
-    New-Item "C:\temp" -itemType Directory;
-    
-# Downloading 7zip
-
-    Invoke-Webrequest -URI $apk1 -OutFile $apk1_install;
-
-# Downloading Firefox
-
-#    Invoke-Webrequest -URI $apk2 -OutFile $apk2_install;
+    New-Item "C:\temp" -itemType Directory -ErrorAction SilentlyContinue;
 
 # Installing 7zip
 
-    Start-Process -FilePath $apk1_install -Args "/S";
+    msiexec.exe /i https://www.7-zip.org/a/7z2301-x64.msi /qn;
 
 # Installing Firefox 
 
-    msiexec.exe /i https://download.mozilla.org/?product=firefox-msi-latest-ssl /qn
-
-# Downloading Adobe
-
-    Invoke-Webrequest -URI $apk3 -OutFile $apk3_install ;
+    msiexec.exe /i https://download.mozilla.org/?product=firefox-msi-latest-ssl /qn;
 
 # Installing Adobe
 
-    Start-Process -FilePath $apk3_install /sAlls -Wait;
+    Invoke-Webrequest -URI $adobe -OutFile $adobe_install;
+    Start-Process $adobe_install -ArgumentList "/sAll /rs /rps /msi /norestart /quiet EULA_ACCEPT=YES" -Wait;
 
 # Removing "temp" directory
 
@@ -49,8 +34,4 @@ $apk3_install = "c:\temp\adobe_installer.exe"
 
 # Setting Default Policy
 
-Set-ExecutionPolicy Default
-
-
-
-
+    Set-ExecutionPolicy Default;
