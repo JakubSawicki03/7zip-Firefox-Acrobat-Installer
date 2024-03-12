@@ -13,11 +13,11 @@ $adobe_install = "c:\temp\adobe_installer.exe"
 
 # Installing 7zip
 
-    msiexec.exe /i https://www.7-zip.org/a/7z2301-x64.msi /qn;
+    msiexec.exe /i https://www.7-zip.org/a/7z2301-x64.msi /qn -Wait;
 
 # Installing Firefox 
 
-    msiexec.exe /i https://download.mozilla.org/?product=firefox-msi-latest-ssl /qn;
+    msiexec.exe /i https://download.mozilla.org/?product=firefox-msi-latest-ssl /qn -Wait;
 
 # Installing Adobe
 
