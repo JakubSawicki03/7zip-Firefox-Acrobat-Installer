@@ -17,12 +17,12 @@ $adobe_install = "c:\temp\adobe_installer.exe"
 
 # Installing Firefox 
 
-    msiexec.exe /i https://download.mozilla.org/?product=firefox-msi-latest-ssl /qn -Wait;
-
+    msiexec.exe /i https://download.mozilla.org/?product=firefox-msi-latest-ssl /qn;  start-sleep -seconds 8;
+    
 # Installing Adobe
 
     Invoke-Webrequest -URI $adobe -OutFile $adobe_install;
-    Start-Process $adobe_install -ArgumentList "/sAll /rs /rps /msi /norestart /quiet EULA_ACCEPT=YES" -Wait;
+    Start-Process $adobe_install -ArgumentList "/sAll /rs /rps /msi /norestart /quiet EULA_ACCEPT=YES";
 
 # Removing "temp" directory
 
